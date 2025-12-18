@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Pricelist Pterodactyl Hosting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#38e07b",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#122017",
+                        "card-dark": "#1c2620",
+                        "border-dark": "#3d5245",
+                        "subtle-text": "#9eb7a8",
+                    },
+                    fontFamily: {
+                        "display": ["Spline Sans", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    animation: {
+                        "fade-in": "fadeIn 0.5s ease-in-out",
+                        "slide-up": "slideUp 0.5s ease-out",
+                        "pulse-once": "pulse 0.5s ease-in-out",
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            "0%": { opacity: "0" },
+                            "100%": { opacity: "1" },
+                        },
+                        slideUp: {
+                            "0%": { transform: "translateY(20px)", opacity: "0" },
+                            "100%": { transform: "translateY(0)", opacity: "1" },
+                        },
+                        pulse: {
+                            "0%, 100%": { transform: "scale(1)" },
+                            "50%": { transform: "scale(1.05)" },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white selection:bg-primary selection:text-background-dark">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Fixed Header -->
+        <header class="sticky-nav w-full border-b border-solid border-b-[#29382f] bg-[#111714]/90">
+            <div class="px-4 md:px-10 py-3 max-w-[1200px] mx-auto flex items-center justify-between whitespace-nowrap">
+                <div class="flex items-center gap-4 text-white">
+                    <div class="size-8 text-primary">
+                        <svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">shamrez.store</h2>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex flex-1 justify-end gap-8">
+                    <div class="flex items-center gap-9">
+                        <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+                        <a class="text-primary text-sm font-bold leading-normal" href="#">Pricing</a>
+                        <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Features</a>
+                        <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Support</a>
+                    </div>
+                    <button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#111714] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
+                        <span class="truncate">Client Area</span>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden text-white">
+                    <button id="mobile-menu-btn" class="p-2">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-[#111714]/95 border-t border-[#29382f]">
+                <div class="px-4 py-4 flex flex-col gap-4">
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+                    <a class="text-primary text-sm font-bold leading-normal" href="#">Pricing</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Features</a>
+                    <a class="text-white hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Support</a>
+                    <button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-[#111714] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
+                        <span class="truncate">Client Area</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content with top padding to account for fixed header -->
+        <main class="flex-1 flex flex-col items-center w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20 pt-20 md:pt-24">
+            <section class="py-16 md:py-24 text-center max-w-3xl">
+                <h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] mb-6">
+                    Power Your Community <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Without Limits</span>
+                </h1>
+                <p class="text-subtle-text text-lg md:text-xl font-normal leading-relaxed">
+                    Ultra-low latency Bot Whatsapp, Telegram, and Nodejs hosting with premium hardware. Select your perfect plan below, whether you need managed panels or raw VPS power.
+                </p>
+                <div class="flex flex-wrap justify-center gap-6 mt-10">
+                    <div class="flex items-center gap-2 text-sm text-white font-medium bg-[#29382f]/50 px-4 py-2 rounded-full border border-[#3d5245]">
+                        <span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+                        Instant Setup
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-white font-medium bg-[#29382f]/50 px-4 py-2 rounded-full border border-[#3d5245]">
+                        <span class="material-symbols-outlined text-primary text-[20px]">shield</span>
+                        DDoS Protection
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-white font-medium bg-[#29382f]/50 px-4 py-2 rounded-full border border-[#3d5245]">
+                        <span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+                        99.9% Uptime
+                    </div>
+                </div>
+            </section>
+
+            <div class="flex justify-center w-full mb-12">
+                <div class="relative flex p-1 bg-[#1c2620] rounded-full border border-[#3d5245]">
+                    <div id="toggle-slider" class="toggle-slider"></div>
+                    <label class="cursor-pointer relative z-10">
+                        <input checked="" class="peer sr-only" name="pricing-type" type="radio" value="panel" id="panel-tab"/>
+                        <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-white peer-checked:text-[#111714] transition-all duration-300">
+                            Panel Hosting
+                        </div>
+                    </label>
+                    <label class="cursor-pointer relative z-10">
+                        <input class="peer sr-only" name="pricing-type" type="radio" value="vps" id="vps-tab"/>
+                        <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-subtle-text peer-checked:text-[#111714] transition-all duration-300">
+                            VPS Hosting
+                        </div>
+                    </label>
+                    <label class="cursor-pointer relative z-10">
+                        <input class="peer sr-only" name="pricing-type" type="radio" value="service" id="service-tab"/>
+                        <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-subtle-text peer-checked:text-[#111714] transition-all duration-300">
+                            Service
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Panel Hosting Section -->
+            <div id="panel-content" class="w-full tab-content">
+                <div class="flex items-center justify-between mb-8 px-2">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">dns</span>
+                        Panel Plans
+                    </h2>
+                    <span class="text-sm text-subtle-text">Fully managed Pterodactyl nodes</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- 1GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">1GB Plan</h3>
+                            <p class="text-subtle-text text-sm">Perfect for testing & small friends groups.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.40</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                1GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                50% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                5GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                1 Database
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="1GB Plan" 
+                                data-price="Rs.40" 
+                                data-ram="1GB DDR4 RAM" 
+                                data-cpu="50% CPU Core" 
+                                data-storage="5GB NVMe Storage" 
+                                data-database="1 Database">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 2GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">2GB Plan</h3>
+                            <p class="text-subtle-text text-sm">Great for vanilla survival servers.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.70</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                2GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                100% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                10GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                2 Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="2GB Plan" 
+                                data-price="Rs.70" 
+                                data-ram="2GB DDR4 RAM" 
+                                data-cpu="100% CPU Core" 
+                                data-storage="10GB NVMe Storage" 
+                                data-database="2 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 3GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">3GB Plan</h3>
+                            <p class="text-subtle-text text-sm">Great for small modded servers.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.110</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                3GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                150% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                15GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                3 Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="3GB Plan" 
+                                data-price="Rs.110" 
+                                data-ram="3GB DDR4 RAM" 
+                                data-cpu="150% CPU Core" 
+                                data-storage="15GB NVMe Storage" 
+                                data-database="3 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 4GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border-2 border-primary bg-card-dark p-6 hover:shadow-[0_0_30px_rgba(56,224,123,0.15)] transition-all duration-300 transform md:-translate-y-4">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-[#111714] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">4GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For modded servers and communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.140</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                4GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                200% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                20GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                5 Databases
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white font-semibold">
+                                <span class="material-symbols-outlined text-primary text-[20px]">star</span>
+                                Priority Support
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-primary text-[#111714] text-sm font-bold hover:bg-white transition-colors mt-auto shadow-[0_0_15px_rgba(56,224,123,0.4)]" 
+                                data-plan="4GB Plan" 
+                                data-price="Rs.140" 
+                                data-ram="4GB DDR4 RAM" 
+                                data-cpu="200% CPU Core" 
+                                data-storage="20GB NVMe Storage" 
+                                data-database="5 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 5GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">5GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For growing communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.180</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                5GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                250% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                25GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                5 Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="5GB Plan" 
+                                data-price="Rs.180" 
+                                data-ram="5GB DDR4 RAM" 
+                                data-cpu="250% CPU Core" 
+                                data-storage="25GB NVMe Storage" 
+                                data-database="5 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 6GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">6GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For medium-sized communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.220</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                6GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                300% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                30GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                7 Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="6GB Plan" 
+                                data-price="Rs.220" 
+                                data-ram="6GB DDR4 RAM" 
+                                data-cpu="300% CPU Core" 
+                                data-storage="30GB NVMe Storage" 
+                                data-database="7 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 7GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">7GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For larger communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.260</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                7GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                350% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                35GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                9 Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="7GB Plan" 
+                                data-price="Rs.260" 
+                                data-ram="7GB DDR4 RAM" 
+                                data-cpu="350% CPU Core" 
+                                data-storage="35GB NVMe Storage" 
+                                data-database="9 Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 8GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">8GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For large communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.300</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                8GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                400% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                40GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="8GB Plan" 
+                                data-price="Rs.300" 
+                                data-ram="8GB DDR4 RAM" 
+                                data-cpu="400% CPU Core" 
+                                data-storage="40GB NVMe Storage" 
+                                data-database="Unlimited Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 9GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">9GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For very large communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.330</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                9GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                450% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                45GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="9GB Plan" 
+                                data-price="Rs.330" 
+                                data-ram="9GB DDR4 RAM" 
+                                data-cpu="450% CPU Core" 
+                                data-storage="45GB NVMe Storage" 
+                                data-database="Unlimited Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 10GB Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">10GB Plan</h3>
+                            <p class="text-subtle-text text-sm">For extremely large communities.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.400</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                10GB DDR4 RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                500% CPU Core
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                50GB NVMe Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited Databases
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="10GB Plan" 
+                                data-price="Rs.400" 
+                                data-ram="10GB DDR4 RAM" 
+                                data-cpu="500% CPU Core" 
+                                data-storage="50GB NVMe Storage" 
+                                data-database="Unlimited Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- Unlimited Plan -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">Unlimited Plan</h3>
+                            <p class="text-subtle-text text-sm">For enterprise networks.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.500</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited RAM
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited CPU
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited Storage
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Unlimited Databases
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white font-semibold">
+                                <span class="material-symbols-outlined text-primary text-[20px]">star</span>
+                                Premium Support
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-plan="Unlimited Plan" 
+                                data-price="Rs.500" 
+                                data-ram="Unlimited RAM" 
+                                data-cpu="Unlimited CPU" 
+                                data-storage="Unlimited Storage" 
+                                data-database="Unlimited Databases">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- Admin Panel -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border-2 border-yellow-500 bg-card-dark p-6 hover:shadow-[0_0_30px_rgba(255,204,0,0.15)] transition-all duration-300">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-[#111714] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Admin Access</div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">Admin Panel</h3>
+                            <p class="text-subtle-text text-sm">Full administrative access.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-yellow-500 text-4xl font-black tracking-tight">Rs.1500</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-yellow-500 text-[20px]">check_circle</span>
+                                Full Admin Access
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-yellow-500 text-[20px]">check_circle</span>
+                                Create Unlimited Nodes
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-yellow-500 text-[20px]">check_circle</span>
+                                Manage All Servers
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-yellow-500 text-[20px]">check_circle</span>
+                                Full API Access
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white font-semibold">
+                                <span class="material-symbols-outlined text-yellow-500 text-[20px]">star</span>
+                                24/7 Priority Support
+                            </div>
+                        </div>
+                        <button class="order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-yellow-500 text-[#111714] text-sm font-bold hover:bg-yellow-400 transition-colors mt-auto shadow-[0_0_15px_rgba(255,204,0,0.4)]" 
+                                data-plan="Admin Panel" 
+                                data-price="Rs.1500" 
+                                data-ram="Full Admin Access" 
+                                data-cpu="Create Unlimited Nodes" 
+                                data-storage="Manage All Servers" 
+                                data-database="Full API Access">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VPS Hosting Section (Initially Hidden) -->
+            <div id="vps-content" class="w-full tab-content hidden">
+                <div class="flex items-center justify-between mb-8 px-2">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">terminal</span>
+                        Digital Ocean VPS Plans
+                    </h2>
+                    <span class="text-sm text-subtle-text">Premium Digital Ocean Droplets with Root Access</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 1GB 1 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">1GB 1 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Entry level VPS</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.350</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">1 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">1GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">25GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">1TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="1GB 1 Core VPS" 
+                                data-price="Rs.350" 
+                                data-cpu="1 vCPU" 
+                                data-ram="1GB RAM" 
+                                data-storage="25GB SSD" 
+                                data-bandwidth="1TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 2GB 1 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">2GB 1 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Basic web server</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.600</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">1 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">2GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">50GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">2TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="2GB 1 Core VPS" 
+                                data-price="Rs.600" 
+                                data-cpu="1 vCPU" 
+                                data-ram="2GB RAM" 
+                                data-storage="50GB SSD" 
+                                data-bandwidth="2TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 4GB 2 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border-2 border-primary bg-[#161d19] p-8 hover:shadow-[0_0_30px_rgba(56,224,123,0.15)] transition-all duration-300">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-[#111714] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">4GB 2 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Balanced performance</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.800</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">2 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">4GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">80GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">3TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-primary text-[#111714] text-sm font-bold hover:bg-white transition-colors" 
+                                data-plan="4GB 2 Core VPS" 
+                                data-price="Rs.800" 
+                                data-cpu="2 vCPU" 
+                                data-ram="4GB RAM" 
+                                data-storage="80GB SSD" 
+                                data-bandwidth="3TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 8GB 2 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">8GB 2 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Memory intensive workloads</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.1000</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">2 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">8GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">160GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">4TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="8GB 2 Core VPS" 
+                                data-price="Rs.1000" 
+                                data-cpu="2 vCPU" 
+                                data-ram="8GB RAM" 
+                                data-storage="160GB SSD" 
+                                data-bandwidth="4TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 8GB 4 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">8GB 4 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Balanced CPU & memory</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.1200</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">4 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">8GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">160GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">5TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="8GB 4 Core VPS" 
+                                data-price="Rs.1200" 
+                                data-cpu="4 vCPU" 
+                                data-ram="8GB RAM" 
+                                data-storage="160GB SSD" 
+                                data-bandwidth="5TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 16GB 4 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">16GB 4 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">High performance server</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.1600</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">4 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">16GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">320GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">6TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="16GB 4 Core VPS" 
+                                data-price="Rs.1600" 
+                                data-cpu="4 vCPU" 
+                                data-ram="16GB RAM" 
+                                data-storage="320GB SSD" 
+                                data-bandwidth="6TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- 16GB 8 Core Plan -->
+                    <div class="pricing-card group flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-[#161d19] p-8 hover:border-primary/30 transition-all duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-white text-xl font-bold">16GB 8 Core</h3>
+                                <p class="text-subtle-text text-sm mt-1">Enterprise grade server</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-primary text-3xl font-black">Rs.2000</span>
+                                <span class="text-xs text-subtle-text">/month</span>
+                            </div>
+                        </div>
+                        <div class="h-px bg-[#29382f] w-full"></div>
+                        <div class="grid grid-cols-2 gap-y-4 gap-x-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">vCores</span>
+                                <span class="text-white font-medium">8 vCPU</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Memory</span>
+                                <span class="text-white font-medium">16GB RAM</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Storage</span>
+                                <span class="text-white font-medium">320GB SSD</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-subtle-text uppercase font-bold">Bandwidth</span>
+                                <span class="text-white font-medium">8TB Transfer</span>
+                            </div>
+                        </div>
+                        <button class="vps-order-btn mt-4 w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 border border-[#3d5245] bg-transparent text-white text-sm font-bold group-hover:border-primary group-hover:text-primary transition-colors" 
+                                data-plan="16GB 8 Core VPS" 
+                                data-price="Rs.2000" 
+                                data-cpu="8 vCPU" 
+                                data-ram="16GB RAM" 
+                                data-storage="320GB SSD" 
+                                data-bandwidth="8TB Transfer">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Section (Initially Hidden) -->
+            <div id="service-content" class="w-full tab-content hidden">
+                <div class="flex items-center justify-between mb-8 px-2">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">smart_toy</span>
+                        Bot Services
+                    </h2>
+                    <span class="text-sm text-subtle-text">Custom bot development and hosting</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                    <!-- Bugbot Service -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">Bugbot Service</h3>
+                            <p class="text-subtle-text text-sm">Advanced bug tracking and reporting bot.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.500</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Custom bug tracking
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Automated reporting
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Priority support
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Regular updates
+                            </div>
+                        </div>
+                        <button class="service-order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-service="Bugbot Service" 
+                                data-price="Rs.500" 
+                                data-feature1="Custom bug tracking" 
+                                data-feature2="Automated reporting" 
+                                data-feature3="Priority support" 
+                                data-feature4="Regular updates">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- MD Bot Service -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">MD Bot Service</h3>
+                            <p class="text-subtle-text text-sm">Multi-purpose Discord bot with moderation.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.500</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Server moderation
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Custom commands
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Role management
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Welcome messages
+                            </div>
+                        </div>
+                        <button class="service-order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-service="MD Bot Service" 
+                                data-price="Rs.500" 
+                                data-feature1="Server moderation" 
+                                data-feature2="Custom commands" 
+                                data-feature3="Role management" 
+                                data-feature4="Welcome messages">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- Store Bot Service -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border border-border-dark bg-card-dark p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(56,224,123,0.1)]">
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">Store Bot Service</h3>
+                            <p class="text-subtle-text text-sm">E-commerce bot for your server.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.600</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Product catalog
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Payment integration
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Order tracking
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Customer support
+                            </div>
+                        </div>
+                        <button class="service-order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-[#29382f] text-white text-sm font-bold group-hover:bg-primary group-hover:text-[#111714] transition-colors mt-auto" 
+                                data-service="Store Bot Service" 
+                                data-price="Rs.600" 
+                                data-feature1="Product catalog" 
+                                data-feature2="Payment integration" 
+                                data-feature3="Order tracking" 
+                                data-feature4="Customer support">
+                            Order Now
+                        </button>
+                    </div>
+
+                    <!-- Telegram Bot Start Service -->
+                    <div class="pricing-card group relative flex flex-col gap-6 rounded-[2rem] border-2 border-primary bg-card-dark p-6 hover:shadow-[0_0_30px_rgba(56,224,123,0.15)] transition-all duration-300 transform md:-translate-y-4">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-[#111714] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-white text-lg font-bold leading-tight">Telegram Bot Start</h3>
+                            <p class="text-subtle-text text-sm">Complete Telegram bot setup and hosting.</p>
+                            <div class="mt-2 flex items-baseline gap-1">
+                                <span class="text-primary text-4xl font-black tracking-tight">Rs.800</span>
+                                <span class="text-subtle-text text-sm font-medium">/mo</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-3 flex-1">
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Custom bot development
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                API integration
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Database setup
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white">
+                                <span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                                Premium support
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-white font-semibold">
+                                <span class="material-symbols-outlined text-primary text-[20px]">star</span>
+                                Free updates
+                            </div>
+                        </div>
+                        <button class="service-order-btn w-full cursor-pointer items-center justify-center rounded-full h-9 px-3 bg-primary text-[#111714] text-sm font-bold hover:bg-white transition-colors mt-auto shadow-[0_0_15px_rgba(56,224,123,0.4)]" 
+                                data-service="Telegram Bot Start" 
+                                data-price="Rs.800" 
+                                data-feature1="Custom bot development" 
+                                data-feature2="API integration" 
+                                data-feature3="Database setup" 
+                                data-feature4="Premium support">
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full mt-24">
+                <div class="bg-[#1c2620] rounded-[3rem] p-8 md:p-12 border border-[#3d5245] relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full"></div>
+                    <div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+                        <div class="flex flex-col gap-6">
+                            <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight">
+                                Global Network <br/>
+                                <span class="text-primary">Low Latency</span>
+                            </h2>
+                            <p class="text-subtle-text text-lg">
+                                Our infrastructure is located in premium data centers worldwide, ensuring the lowest ping for your players regardless of their location.
+                            </p>
+                            <div class="flex gap-4 flex-wrap mt-4">
+                                <div class="flex items-center gap-2 bg-[#111714] rounded-full px-4 py-2 border border-[#3d5245]">
+                                    <span class="text-xl">🇺🇸</span>
+                                    <span class="text-white text-sm font-medium">New York</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-[#111714] rounded-full px-4 py-2 border border-[#3d5245]">
+                                    <span class="text-xl">🇩🇪</span>
+                                    <span class="text-white text-sm font-medium">Frankfurt</span>
+                                </div>
+                                <div class="flex items-center gap-2 bg-[#111714] rounded-full px-4 py-2 border border-[#3d5245]">
+                                    <span class="text-xl">🇸🇬</span>
+                                    <span class="text-white text-sm font-medium">Singapore</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="h-64 w-full bg-cover bg-center rounded-2xl border border-[#3d5245] opacity-80" data-alt="Abstract world map showing server node connections with glowing dots" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZtVcNEX169-n-KjANyfyAPdxuhTYC-LqyYSd0twVhWRMKQ1_fh4QD2vTxEPnQTIhaTT4n8vladGF5HRfp1ORssYK1qaJYlNdsAWT5Fo1T59MUcGNXsFKOiezWJIB-CJ7812tIJ0PlK2aRDEWuXLN_sklSflWEugZwJbyh5ajkAO2hOFaMGYmNrJiuTiLlvyNVoGEpFn9RhUBV6bn1oEXT83U33hP6DmqcyqkTC2B312dywNZNgOQPvvf9IK32KBmApOOiBvgdBR33');"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="border-t border-[#29382f] bg-[#111714] py-12 px-4 md:px-10">
+            <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2 text-white">
+                    <div class="size-6 text-primary">
+                        <svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <span class="font-bold text-lg">Pterodactyl Hosting</span>
+                </div>
+                <div class="text-subtle-text text-sm text-center md:text-right">
+                    <p>© 2023 Pterodactyl Hosting. All rights reserved.</p>
+                    <div class="flex gap-6 justify-center md:justify-end mt-2">
+                        <a class="hover:text-white transition-colors" href="#">Privacy</a>
+                        <a class="hover:text-white transition-colors" href="#">Terms</a>
+                        <a class="hover:text-white transition-colors" href="#">SLA</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-white">Select Order Method</h3>
+                <button id="close-modal" class="text-subtle-text hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            
+            <div class="mb-6 p-4 bg-[#111714] rounded-xl border border-[#3d5245]">
+                <h4 class="text-lg font-semibold text-white mb-2">Order Summary</h4>
+                <div id="order-summary" class="text-sm text-subtle-text">
+                    <!-- Order details will be inserted here -->
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+                <button id="whatsapp-order" class="flex flex-col items-center justify-center gap-2 p-3 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-xl transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.123-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span class="font-medium">WhatsApp</span>
+                </button>
+                
+                <button id="telegram-order" class="flex flex-col items-center justify-center gap-2 p-3 bg-[#0088cc] hover:bg-[#0077b3] text-white rounded-xl transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    <span class="font-medium">Telegram</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

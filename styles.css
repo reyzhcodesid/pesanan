@@ -1,0 +1,144 @@
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111714;
+}
+::-webkit-scrollbar-thumb {
+    background: #29382f;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3d5245;
+}
+
+/* Sticky navbar with higher z-index */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+    padding-top: 0;
+}
+
+/* Smooth transitions for all interactive elements */
+.smooth-transition {
+    transition: all 0.3s ease;
+}
+
+/* Tab content animation */
+.tab-content {
+    animation: fadeIn 0.5s ease-in-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Card hover effect */
+.pricing-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Toggle button animation for three tabs - FIXED VERSION */
+.toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 33.33%;
+    background: #38e07b;
+    border-radius: 9999px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+/* Position the slider correctly for each tab */
+#panel-tab:checked ~ .toggle-slider {
+    transform: translateX(0);
+}
+
+#vps-tab:checked ~ .toggle-slider {
+    transform: translateX(100%);
+}
+
+#service-tab:checked ~ .toggle-slider {
+    transform: translateX(200%);
+}
+
+/* Tab label styles */
+.tab-label {
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+/* Mobile menu animation */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+    max-height: 500px;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #1c2620;
+    border-radius: 2rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    border: 1px solid #3d5245;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Fix for tab container positioning */
+.tab-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.tab-container > div {
+    position: relative;
+    display: flex;
+    padding: 0.25rem;
+    background-color: #1c2620;
+    border-radius: 9999px;
+    border: 1px solid #3d5245;
+}
+
+/* Make sure the slider stays within the container */
+.tab-container .toggle-slider {
+    width: calc(100% / 3);
+}
