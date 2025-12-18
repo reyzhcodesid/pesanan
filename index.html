@@ -99,11 +99,10 @@
             </div>
         </header>
 
-        <!-- Main Content with top padding to account for fixed header -->
         <main class="flex-1 flex flex-col items-center w-full max-w-[1200px] mx-auto px-4 md:px-10 pb-20 pt-20 md:pt-24">
             <section class="py-16 md:py-24 text-center max-w-3xl">
                 <h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em] mb-6">
-                    Hosting Pterodactyl<br/>
+                    Pteroactyl Panel Hosting Only at <br/>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">shamrez</span>
                 </h1>
                 <p class="text-subtle-text text-lg md:text-xl font-normal leading-relaxed">
@@ -125,22 +124,23 @@
                 </div>
             </section>
 
-            <div class="flex justify-center w-full mb-12">
+            <!-- Tab Container - FIXED STRUCTURE -->
+            <div class="tab-container flex justify-center w-full mb-12">
                 <div class="relative flex p-1 bg-[#1c2620] rounded-full border border-[#3d5245]">
                     <div id="toggle-slider" class="toggle-slider"></div>
-                    <label class="cursor-pointer relative z-10">
+                    <label class="cursor-pointer relative z-10 tab-label-container" data-tab="panel">
                         <input checked="" class="peer sr-only" name="pricing-type" type="radio" value="panel" id="panel-tab"/>
                         <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-white peer-checked:text-[#111714] transition-all duration-300">
                             Panel Hosting
                         </div>
                     </label>
-                    <label class="cursor-pointer relative z-10">
+                    <label class="cursor-pointer relative z-10 tab-label-container" data-tab="vps">
                         <input class="peer sr-only" name="pricing-type" type="radio" value="vps" id="vps-tab"/>
                         <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-subtle-text peer-checked:text-[#111714] transition-all duration-300">
                             VPS Hosting
                         </div>
                     </label>
-                    <label class="cursor-pointer relative z-10">
+                    <label class="cursor-pointer relative z-10 tab-label-container" data-tab="service">
                         <input class="peer sr-only" name="pricing-type" type="radio" value="service" id="service-tab"/>
                         <div class="tab-label px-6 py-2.5 rounded-full text-sm font-bold text-subtle-text peer-checked:text-[#111714] transition-all duration-300">
                             Service

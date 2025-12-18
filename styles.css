@@ -48,6 +48,24 @@ body {
     transform: translateY(-5px);
 }
 
+/* Tab Container - FIXED STRUCTURE */
+.tab-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.tab-container > div {
+    position: relative;
+    display: flex;
+    padding: 0.25rem;
+    background-color: #1c2620;
+    border-radius: 9999px;
+    border: 1px solid #3d5245;
+}
+
 /* Toggle button animation for three tabs - FIXED VERSION */
 .toggle-slider {
     position: absolute;
@@ -59,19 +77,6 @@ body {
     border-radius: 9999px;
     transition: transform 0.3s ease;
     z-index: 1;
-}
-
-/* Position the slider correctly for each tab */
-#panel-tab:checked ~ .toggle-slider {
-    transform: translateX(0);
-}
-
-#vps-tab:checked ~ .toggle-slider {
-    transform: translateX(100%);
-}
-
-#service-tab:checked ~ .toggle-slider {
-    transform: translateX(200%);
 }
 
 /* Tab label styles */
@@ -118,27 +123,4 @@ body {
     width: 90%;
     border: 1px solid #3d5245;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-/* Fix for tab container positioning */
-.tab-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 3rem;
-}
-
-.tab-container > div {
-    position: relative;
-    display: flex;
-    padding: 0.25rem;
-    background-color: #1c2620;
-    border-radius: 9999px;
-    border: 1px solid #3d5245;
-}
-
-/* Make sure the slider stays within the container */
-.tab-container .toggle-slider {
-    width: calc(100% / 3);
 }

@@ -1,76 +1,106 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality with improved animation
     const panelTab = document.getElementById('panel-tab');
     const vpsTab = document.getElementById('vps-tab');
     const serviceTab = document.getElementById('service-tab');
     const panelContent = document.getElementById('panel-content');
     const vpsContent = document.getElementById('vps-content');
     const serviceContent = document.getElementById('service-content');
+    const toggleSlider = document.getElementById('toggle-slider');
     
+    // Initially show panel content and hide VPS and Service content
     panelContent.classList.remove('hidden');
     vpsContent.classList.add('hidden');
     serviceContent.classList.add('hidden');
     
-    panelTab.addEventListener('change', function() {
-        if (this.checked) {
-            vpsContent.style.opacity = '0';
-            vpsContent.style.transform = 'translateY(20px)';
-            serviceContent.style.opacity = '0';
-            serviceContent.style.transform = 'translateY(20px)';
+    // Function to move slider to the correct position
+    function moveSlider(tabName) {
+        if (tabName === 'panel') {
+            toggleSlider.style.transform = 'translateX(0)';
+        } else if (tabName === 'vps') {
+            toggleSlider.style.transform = 'translateX(100%)';
+        } else if (tabName === 'service') {
+            toggleSlider.style.transform = 'translateX(200%)';
+        }
+    }
+    
+    // Function to switch tab content
+    function switchTab(tabName) {
+        // Hide all content
+        panelContent.style.opacity = '0';
+        panelContent.style.transform = 'translateY(20px)';
+        vpsContent.style.opacity = '0';
+        vpsContent.style.transform = 'translateY(20px)';
+        serviceContent.style.opacity = '0';
+        serviceContent.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            // Hide all content
+            panelContent.classList.add('hidden');
+            vpsContent.classList.add('hidden');
+            serviceContent.classList.add('hidden');
             
-            setTimeout(() => {
-                vpsContent.classList.add('hidden');
-                serviceContent.classList.add('hidden');
+            // Show selected content
+            if (tabName === 'panel') {
                 panelContent.classList.remove('hidden');
-                
                 setTimeout(() => {
                     panelContent.style.opacity = '1';
                     panelContent.style.transform = 'translateY(0)';
                 }, 50);
-            }, 300);
+            } else if (tabName === 'vps') {
+                vpsContent.classList.remove('hidden');
+                setTimeout(() => {
+                    vpsContent.style.opacity = '1';
+                    vpsContent.style.transform = 'translateY(0)';
+                }, 50);
+            } else if (tabName === 'service') {
+                serviceContent.classList.remove('hidden');
+                setTimeout(() => {
+                    serviceContent.style.opacity = '1';
+                    serviceContent.style.transform = 'translateY(0)';
+                }, 50);
+            }
+        }, 300);
+        
+        // Move slider
+        moveSlider(tabName);
+    }
+    
+    // Add event listeners for tab switching
+    panelTab.addEventListener('change', function() {
+        if (this.checked) {
+            switchTab('panel');
         }
     });
     
     vpsTab.addEventListener('change', function() {
         if (this.checked) {
-            panelContent.style.opacity = '0';
-            panelContent.style.transform = 'translateY(20px)';
-            serviceContent.style.opacity = '0';
-            serviceContent.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                panelContent.classList.add('hidden');
-                serviceContent.classList.add('hidden');
-                vpsContent.classList.remove('hidden');
-                
-                setTimeout(() => {
-                    vpsContent.style.opacity = '1';
-                    vpsContent.style.transform = 'translateY(0)';
-                }, 50);
-            }, 300);
+            switchTab('vps');
         }
     });
     
     serviceTab.addEventListener('change', function() {
         if (this.checked) {
-            panelContent.style.opacity = '0';
-            panelContent.style.transform = 'translateY(20px)';
-            vpsContent.style.opacity = '0';
-            vpsContent.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                panelContent.classList.add('hidden');
-                vpsContent.classList.add('hidden');
-                serviceContent.classList.remove('hidden');
-                
-                // Fade in new content
-                setTimeout(() => {
-                    serviceContent.style.opacity = '1';
-                    serviceContent.style.transform = 'translateY(0)';
-                }, 50);
-            }, 300);
+            switchTab('service');
         }
     });
     
+    // Also add click event listeners to the tab labels for better UX
+    const tabLabels = document.querySelectorAll('.tab-label-container');
+    tabLabels.forEach(label => {
+        label.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            const radioButton = this.querySelector('input[type="radio"]');
+            
+            // Check the radio button
+            radioButton.checked = true;
+            
+            // Switch to the selected tab
+            switchTab(tabName);
+        });
+    });
+    
+    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -78,12 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.classList.toggle('open');
     });
     
+    // Order modal functionality
     const orderModal = document.getElementById('order-modal');
     const closeModal = document.getElementById('close-modal');
     const orderSummary = document.getElementById('order-summary');
     const whatsappOrder = document.getElementById('whatsapp-order');
     const telegramOrder = document.getElementById('telegram-order');
     
+    // WhatsApp and Telegram contact info
     const whatsappNumber = '923442619602';
     const telegramUsername = 'DGShamrez';
     
@@ -229,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // Handle order button clicks for Service plans
     const serviceOrderButtons = document.querySelectorAll('.service-order-btn');
     serviceOrderButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -239,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const feature3 = this.getAttribute('data-feature3');
             const feature4 = this.getAttribute('data-feature4');
             
+            // Create order summary
             orderSummary.innerHTML = `
                 <div class="space-y-2">
                     <div class="flex justify-between">
@@ -268,6 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             
+            // Create order message
             const orderMessage = `I would like to order ${service} with the following features:\n\n` +
                 `Service: ${service}\n` +
                 `Features:\n` +
@@ -278,17 +313,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 `Price: ${price}/month\n\n` +
                 `Please inform me about payment methods and next steps. Thank you!`;
             
+            // Store order message for later use
             orderModal.setAttribute('data-order-message', orderMessage);
             
+            // Show modal
             orderModal.classList.add('active');
         });
     });
-        whatsappOrder.addEventListener('click', function() {
+    
+    // Handle WhatsApp order button click
+    whatsappOrder.addEventListener('click', function() {
         const orderMessage = orderModal.getAttribute('data-order-message');
         openWhatsApp(orderMessage);
         orderModal.classList.remove('active');
     });
     
+    // Handle Telegram order button click
     telegramOrder.addEventListener('click', function() {
         const orderMessage = orderModal.getAttribute('data-order-message');
         openTelegram(orderMessage);
