@@ -1,4 +1,6 @@
 /* Scrollbar styles */
+
+/* scols */
 ::-webkit-scrollbar {
     width: 8px;
 }

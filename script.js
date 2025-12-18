@@ -321,6 +321,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+
+    // schols
     // Handle WhatsApp order button click
     whatsappOrder.addEventListener('click', function() {
         const orderMessage = orderModal.getAttribute('data-order-message');
