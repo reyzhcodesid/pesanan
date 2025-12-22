@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // WhatsApp and Telegram contact info
     const whatsappNumber = '923442619602';
-    const telegramUsername = 'DGShamrez';
+    const telegramUsername = 'OnlyShamrez';
     
     // Function to open WhatsApp with message
     function openWhatsApp(message) {
